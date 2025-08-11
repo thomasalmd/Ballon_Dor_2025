@@ -7,6 +7,16 @@ import snowflake.connector
 
 load_dotenv()
 
+
+#20250811 Controle de la clé AZure et impossibiité de se connecter
+azure_cs = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
+if azure_cs:
+    print(f"[DEBUG] AZURE_STORAGE_CONNECTION_STRING loaded: {azure_cs[:30]}... (length: {len(azure_cs)})")
+else:
+    print("[DEBUG] AZURE_STORAGE_CONNECTION_STRING is NOT loaded")
+
+
+
 API_KEY = os.getenv("APIFOOTBALL_KEY")
 if not API_KEY:
     raise RuntimeError("APIFOOTBALL_KEY manquant dans .env")
