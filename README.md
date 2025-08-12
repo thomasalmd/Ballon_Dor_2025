@@ -290,5 +290,5 @@ git checkout -b ui-refresh
 git add app.py requirements.txt .streamlit/config.toml
 git commit -m "UI: thème + presets + explications + charts"
 git push -u origin ui-refresh
-# ouvrir une Pull Request vers main, puis merger
+# ouvrir une Pull Request vers main, puis merger  
 ```
