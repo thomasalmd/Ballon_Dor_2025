@@ -12,6 +12,15 @@ from dotenv import load_dotenv
 st.set_page_config(page_title="Ballon d'Or 2025", layout="wide")
 load_dotenv()
 
+try:
+    import streamlit as st
+    for k, v in st.secrets.items():
+        os.environ.setdefault(k, str(v))
+except Exception:
+    pass
+
+
+
 ACCOUNT   = os.getenv("SNOWFLAKE_ACCOUNT")
 USER      = os.getenv("SNOWFLAKE_USER")
 PASSWORD  = os.getenv("SNOWFLAKE_PASSWORD")  # Laisse vide si SSO
